@@ -1,0 +1,328 @@
+:root {
+  --yellow: #fdfcef;
+  --pink: #fdeff0;
+  --purple: #f7effd;
+  --red: #730d2e;
+  --text-span: #f9ced1;
+  --shadow-button: #f18a91;
+}
+
+
+/*title*/
+h1 {
+  color: white;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: calc(1vw + 1.5vh);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+h2 span {
+  background-image: linear-gradient(to bottom, transparent 50%, var(--text-span) 50%);
+  padding: .1em .4em;
+  border-radius: 3px;
+  -webkit-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/*year*/
+h3 {
+  background: -webkit-linear-gradient(#f3a1a6, #be7df0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: calc(1vw + 8vh);
+  font-family: 'Cardo', serif;
+}
+
+
+/*date*/
+p {
+  font-size: calc(0.5vw + 1.2vh);
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(#f18a91, #b367ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background: #fdfcef;
+  background: -webkit-linear-gradient(135deg, #fdfcef 0%, #fdeff0 50%, #eff0fd 100%);
+  background: linear-gradient(135deg, #fdfcef 0%, #fdeff0 50%, #eff0fd 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background: #fdfcef;
+  background: -webkit-linear-gradient(307deg, #fdfcef 0%, #fdeff0 50%, #eff0fd 100%);
+  background: linear-gradient(307deg, #fdfcef 0%, #fdeff0 50%, #eff0fd 100%);
+  -webkit-box-shadow: 0 1px 6.5px 3.5px #dddddd;
+  -moz-box-shadow: 0 1px 6.5px 3.5px #dddddd;
+  box-shadow: 0 1px 6.5px 3.5px #dddddd;
+  padding: 18px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: calc(0.2vw + 2.2vh);
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  background: -webkit-linear-gradient(#f3a1a6, #be7df0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 650px) {
+  .post img {
+    flex-direction: column;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-container .image-text {
+    top: 30%;
+  }
+}
+
+@media screen and (min-width: 651px) {
+  .image-container .image-text {
+    top: 55%;
+  }
+}
+
+.image-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  filter: brightness(0.7);
+  opacity: 0.8;
+}
+
+.image-text {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: calc(2vw + 3vh);
+  font-family: 'Dancing Script', cursive;
+}
+
+.post {
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.post img {
+  border-radius: 10px;
+  width: calc(1vw + 50vh);
+  padding: 5px;
+  display: inline-block;
+  flex: 1;
+}
+
+.post img:hover {
+  cursor: pointer;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.dropdown-content {
+  display: none;
+  overflow-wrap: anywhere;
+  position: fixed;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  max-width: 85%;
+  max-height: 85%;
+  border: 2px black;
+  border-radius: 7px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: var(--text-span);
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  box-shadow: 5px 5px 5px black;
+  transition: background-color 0.3s ease;
+}
+
+.lightbox-close:hover {
+  background-color: var(--shadow-button);
+}
+
+
+.lightbox-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  color: white;
+  font-size: 0;
+  /* Hide the old ">" and "<" characters */
+  cursor: pointer;
+  background-color: var(--text-span);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.lightbox-prev:before,
+.lightbox-next:before {
+  content: '';
+  font-size: 24px;
+  /* Set the font size for the custom arrow icons */
+}
+
+.lightbox-prev {
+  margin-left: 10px;
+}
+
+.lightbox-next {
+  margin-right: 10px;
+}
+
+/* Custom icon for previous button */
+.lightbox-prev:before {
+  content: '\2190';
+  /* Unicode arrow left character */
+}
+
+/* Custom icon for next button */
+.lightbox-next:before {
+  content: '\2192';
+  /* Unicode arrow right character */
+}
+
+.lightbox-prev:hover {
+  background-color: var(--shadow-button);
+  box-shadow: 5px 5px 5px black;
+  transition: background-color box-shadow 0.3s ease;
+}
+
+.lightbox-next:hover {
+  background-color: var(--shadow-button);
+  box-shadow: -5px 5px 5px black;
+  transition: background-color box-shadow 0.3s ease;
+}
+
+.sticky-button {
+  position: fixed;
+  top: 95%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: var(--pink);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.sticky-button:hover {
+  background-color: var(--shadow-button);
+  cursor: pointer;
+}
+
+.sticky-button:before {
+  content: '\2191';
+  /* Unicode arrow left character */
+  font-size: 24px;
+  color: var(--text-span);
+}
+
+.sticky-button a {
+  color: var(--text-span);
+  text-decoration: none;
+}
