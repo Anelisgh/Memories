@@ -1,0 +1,67 @@
+:root {
+  --yellow: #fdfcef;
+  --pink: #fdeff0;
+  --purple: #f7effd;
+  --red: #730d2e;
+  --text-span: #f9ced1;
+  --shadow-button: #f18a91;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple); /* fundal calm, subtil */
+  font-family: Arial, sans-serif;
+}
+
+/* Login container centrat și stilizat simplu */
+.login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+/* Titlu */
+.login-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Input */
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Button */
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--red);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: var(--shadow-button);
+}
+
+/* Mesaj de eroare */
+#error-message {
+  margin-top: 10px;
+  color: red;
+  font-size: 14px;
+}
